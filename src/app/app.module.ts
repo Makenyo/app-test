@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { SimpleFormComponent } from './simple-form/simple-form.component';
+import { ComplexFormComponent } from './complex-form/complex-form.component';
+import { AddressFormComponent } from './complex-form/address-form/address-form.component';
+import { ContactFormComponent } from './complex-form/contact-form/contact-form.component';
+
 import {ReactiveFormsModule} from '@angular/forms';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -51,7 +56,11 @@ import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SimpleFormComponent,
+    ComplexFormComponent,
+    AddressFormComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

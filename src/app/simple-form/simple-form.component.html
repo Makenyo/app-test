@@ -1,0 +1,47 @@
+<h1>Simple Form</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+            <mat-error *ngIf="form.get('username').hasError('required')">
+                Eingabe erforderlich!
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="form.get('email').hasError('required')">
+                Eingabe erforderlich!
+            </mat-error>
+            <mat-error *ngIf="form.get('email').hasError('email')">
+                Keine gültige Email!
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div formGroupName="address">
+        <div>
+            <mat-form-field>
+                <mat-label>Street</mat-label>
+                <input matInput formControlName="street">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Zipcode</mat-label>
+                <input matInput formControlName="zipcode">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city">
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <button mat-button type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+</form>

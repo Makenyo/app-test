@@ -1,0 +1,8 @@
+<h1>Complex Form</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-contact-form formControlName="contact"></app-contact-form>
+  <app-address-form formControlName="address"></app-address-form>
+  <div>
+    <button mat-button type="submit">Submit</button>
+  </div>
+</form>
